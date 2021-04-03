@@ -1,0 +1,86 @@
+//import custom variables
+@import 'styles/varriables';
+@import 'styles/reset';
+
+body {
+  background-color: $default-background-color;
+}
+
+.content {
+  margin-left: -8px;
+  margin-right: -8px;
+
+  @media (max-width: 600px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.container {
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+
+  @media (min-width:1040px) {
+    width: $container-width;
+    padding: 0;
+  }
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.btn-default {
+  @include default-btn;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.btn-default:not(:disabled):after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: none;
+}
+
+.btn-default:not(:disabled):hover:after {
+  width: 120%;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 0.4s ease-in-out;
+}
+
+.disabled.btn-default,
+.btn-default:disabled {
+  @include default-btn;
+  @include disabled-btn;
+}
+
+input[type=text].form-input {
+  border: none;
+  border-bottom: 1px solid $default-border-color;
+  border-radius: 0;
+  outline: none;
+  height: 32px;
+  width: 100%;
+  font-size: 16px;
+  margin: 2px 4px 1px 4px;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+}
+
+input[type=text].form-input:focus {
+  border: none;
+  border-bottom: 2px solid $default-border-color;
+  margin: 2px 4px 0px 4px;
+}

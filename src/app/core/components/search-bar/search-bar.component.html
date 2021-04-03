@@ -1,0 +1,5 @@
+<div class="search-bar">
+  <span class="label">Search a movie</span> <input type="text" placeholder="Search a movie" (keydown.enter)="onSearch()"
+    [(ngModel)]="query" class="form-input" />
+</div>
+<button class="btn-default btn-search" (click)="onSearch()">SEARCH</button>

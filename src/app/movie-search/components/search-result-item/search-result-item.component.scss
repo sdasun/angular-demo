@@ -1,0 +1,62 @@
+@import '/src/styles/varriables';
+
+:host {
+  max-width: 504px;
+  width: calc(50% - 16px);
+  box-sizing: border-box;
+  margin: 8px;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    margin: 8px 0;
+    max-width: none;
+  }
+}
+
+.movie-item {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 0px 7px #ccc;
+  box-sizing: border-box;
+  min-height: 274px;
+}
+
+.poster {
+  display: flex;
+  background-color: #f2f5f7;
+  width: 185px;
+  min-width: 185px;
+}
+
+.poster img {
+  max-height: 274px;
+  height: auto;
+  width: 185px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.footer {
+  display: flex;
+  border-top: 2px solid #ecedee;
+  padding: 16px 15px;
+
+  .year {
+    display: flex;
+    flex-grow: 1;
+    font-size: 18px;
+    align-items: center;
+    color: #d2d5d9;
+  }
+}

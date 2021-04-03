@@ -1,0 +1,24 @@
+<div class="movie-item" *ngIf="item">
+  <div class="poster"><img [alt]="item.Title" defaultImage="/assets/images/movie-poster-placeholder.jpg" [lazyLoad]="item.Poster"></div>
+  <div class="description">
+    <div class="text">
+      <div class="title">{{item.Title}}</div>
+      <div class="text-block" *ngIf="item.Plot">
+        <div class="text-block-title">Plot</div>
+        {{item.Plot}}
+      </div>
+      <div class="text-block" *ngIf="item.Actors">
+        <div class="text-block-title">Actors</div>
+        {{item.Actors}}
+      </div>
+      <div class="text-block" *ngIf="item.Ratings">
+        <div class="text-block-title">Ratings</div>
+        <div *ngFor="let rating of item.Ratings">{{rating.Source}} {{rating.Value}}</div>
+        <div *ngIf="item.Ratings?.length=== 0">N/A</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="year">{{item.Year}}</div>
+    </div>
+  </div>
+</div>

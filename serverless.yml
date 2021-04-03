@@ -1,0 +1,34 @@
+service:
+  name: gapstars-dasun
+
+plugins:
+  - serverless-hooks-plugin
+  - serverless-s3-sync
+  - serverless-cloudfront-invalidate
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+  profile: SigmaDigital
+
+custom:
+  distributionIds:
+    dev: E2PVLRE66U5531
+    prod: E2PVLRE66U5531 #Temporarily use the same value for testing purpose
+    stg: E2PVLRE66U5531 #Temporarily use the same value for testing purpose
+  s3Map:
+    dev: prod
+    prod: prod #Temporarily use the same value for testing purpose
+    stg: prod #Temporarily use the same value for testing purpose
+  cloudfrontInvalidate:
+    distributionId: ${self:custom.distributionIds.${opt:stage, self:provider.stage}} #conditional, distributionId or distributionIdKey is required.   
+    items: # one or more paths required 
+      - "/*"
+  hooks:
+    before:package:createDeploymentArtifacts:
+      - npm run build
+  s3Sync:
+    - bucketName: gapstars-web-prod
+      localDir: dist/gapstars
+      acl: public-read

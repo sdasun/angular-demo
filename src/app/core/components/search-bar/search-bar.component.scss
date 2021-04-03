@@ -1,0 +1,51 @@
+:host {
+  display: flex;
+}
+
+.btn-default.btn-search {
+  height: 31px;
+  padding: 10px 16px;
+  align-self: flex-end;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 0 0;
+  flex-direction: row;
+
+  .label {
+    margin-top: 7px;
+    margin-right: 5px;
+  }
+
+  input {
+    font-size: 12px;
+    font-weight: bold;
+    max-width: 128px;
+    color: #161616;
+    margin: 4px 4px 1px 4px;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    @media (max-width:600px) {
+      max-width: 125px;
+      margin-right: 1px;
+      background: #e8f0fe;
+      border-bottom: 1px solid #ecedee;
+
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+  }
+
+  @media (max-width:600px) {
+    .label {
+      display: none;
+    }
+  }
+}

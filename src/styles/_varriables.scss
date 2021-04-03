@@ -1,0 +1,35 @@
+$container-width: 1024px;
+$default-border-color: #b6b4b6;
+$default-text-color: #3b3e3f;
+$default-background-color: #fcfcfd;
+$default-border-radius: 3px;
+
+$btn-disabled-color: #3b3e3f;
+$btn-default-bg-color: #307cfb;
+$btn-default-text-color: #ffffff;
+
+
+$default-padding: 10px;
+
+@mixin default-btn {
+  background-color: $btn-default-bg-color;
+  color: $btn-default-text-color;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 0;
+  padding: $default-padding 1.7*$default-padding;
+  border-radius: $default-border-radius;
+  border: none;
+  height: 32px;
+}
+
+@mixin disabled-btn {
+  background-color: $btn-disabled-color;
+  color: $btn-default-text-color;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 0;
+  padding: $default-padding 2*$default-padding;
+  border-radius: $default-border-radius;
+  border: none;
+}

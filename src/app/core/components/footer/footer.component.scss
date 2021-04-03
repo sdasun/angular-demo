@@ -1,0 +1,156 @@
+div {
+  //background-color: #011949;
+  //color: white;
+}
+
+.footer2 {
+  background-color: #05142f;
+  color: #fff;
+  display: flex;
+  padding: 46px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.footer2 ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  width: 100%;
+}
+
+.footer2 li {
+  align-items: center;
+  display: inline-block;
+  height: 48px;
+  justify-content: center;
+  line-height: 48px;
+  list-style: outside none none;
+  margin-right: 50px;
+  width: auto;
+}
+
+.social-icons svg {
+  height: 48px;
+  line-height: 48px;
+}
+
+.copyRtxt {
+  color: #51608a;
+  float: left;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 0 20px;
+  text-align: center;
+  width: 100%;
+}
+
+a.footer_link {
+  color: #fff;
+  font-family: 'Heebo', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a.footer_link:hover {
+  color: #8df1ea;
+  transition: color 0.2s ease-in-out;
+}
+
+.bot_sicon,
+.bot_logo {
+  float: left;
+}
+
+@media only screen and (max-width: 1116px) {
+  .bot_logo {
+    float: left;
+    text-align: right;
+    width: calc(50% - -62px) !important;
+  }
+
+  .bot_sicon {
+    text-align: left;
+    width: 50% !important;
+  }
+
+  .bot_box1 {
+    display: flex;
+    float: left;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer2 ul {
+    //flex-direction: column;
+    display: block;
+    padding-left: 0;
+  }
+
+  .footer2 li {
+    height: auto;
+    margin-right: 40px;
+  }
+
+  .bot_box1 li {
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  .footer2 ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .bot_box1 {
+    flex-direction: column;
+  }
+
+  .bot_sicon,
+  .bot_logo {
+    text-align: center;
+    width: 100% !important;
+  }
+
+  .bot_sicon {
+    margin: 0;
+  }
+
+  .footer2 li {
+    height: auto;
+    margin-right: 0;
+  }
+
+  .bot_box1 li {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .footer2 {
+    padding: 15px 0;
+  }
+
+  .bot_logo img {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .copyRtxt {
+    font-size: 13px;
+  }
+
+  .footer2 li {
+    line-height: 42px;
+  }
+}
+
+@media only screen and (max-width: 331px) {
+  .copyRtxt {
+    font-size: 12px;
+  }
+}

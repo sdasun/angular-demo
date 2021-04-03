@@ -1,0 +1,12 @@
+<div class="movie-item" *ngIf="item">
+  <div class="poster"><img defaultImage="/assets/images/movie-poster-placeholder.jpg" [lazyLoad]="item.Poster"></div>
+  <div class="description">
+    <div class="title">
+      {{item.Title}}
+    </div>
+    <div class="footer">
+      <div class="year">{{item.Year}}</div>
+      <button class="btn-default" (click)="onDetails(item)">DETAILS</button>
+    </div>
+  </div>
+</div>

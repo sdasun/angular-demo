@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="" *ngIf="(isSelectedLoading$ | async) || (isSelectedLoading$ | async) ">
+    <app-spinner></app-spinner>
+  </div>
+  <div class="selected-movie content" *ngIf="isSelectedLoaded$ | async">
+    <app-movie-detail [item]="selectedItem"></app-movie-detail>
+  </div>
+  <div class="search-result content">
+    <app-search-result-item *ngFor="let item of (searchResult$ | async)" [item]="item"></app-search-result-item>
+  </div>
+  <div class="not-found content" *ngIf="(isSearchLoaded$ | async) && (isSearchNotFound$ | async)">
+    Movie not found!
+  </div>
+  <div class="not-found content" *ngIf="(searchError$ | async)">
+    <ng-container *ngIf="(searchError$ | async).Error">
+      {{(searchError$ | async)?.Error}}
+    </ng-container>
+
+    <ng-container *ngIf="!(searchError$ | async).Error">
+      Something Went Wrong.
+    </ng-container>
+  </div>
+</div>

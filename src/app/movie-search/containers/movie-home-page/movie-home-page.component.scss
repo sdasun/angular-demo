@@ -1,0 +1,18 @@
+@import '/src/styles/varriables';
+
+:host {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome {
+    margin-top:28px;
+    background-color: #f2f5f7;
+    width: 100%;
+    padding: 34px 10px;
+    text-align: center;
+    border-style: dashed;
+    border-color: #eee;
+    border-width: 1px;
+    box-sizing: border-box;
+}
